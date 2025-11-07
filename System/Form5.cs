@@ -21,6 +21,8 @@ namespace System
 
             float total = listBox1.Items.Count;
             Form5 lahat = new Form5(total);
+
+            
            
             foreach (var item in items)
             {
@@ -33,6 +35,7 @@ namespace System
 
             comboBox2.Items.Add("Cash");
             comboBox2.Items.Add(" Credit Card");
+
         }
 
         public Form5(ListBox.SelectedObjectCollection selectedItems)
@@ -90,30 +93,71 @@ namespace System
 
         private void button1_Click(object sender, EventArgs e)
         {
+            float total = 0;
+
+
             if (comboBox2.Text == "Cash")
             {
-             float pay= Convert.ToSingle(textBox1.Text);
-                listBox1.Items.Add(comboBox1.SelectedItem);
-               
-                listBox1.Items.Add( "Paid:"+pay );
-               
+                //  Get payment from textbox
+                if (float.TryParse(textBox3.Text, out float payment))
+                {
+                    
+
+                    // Find the total line inside the list box
+                    foreach (string item in listBox1.Items)
+                    {
+                        if (item.StartsWith("Total: ₱"))
+                        {
+                            string priceText = item.Replace("Total: ₱", "");
+                            if (float.TryParse(priceText, out float totalValue))
+                            {
+                                total = totalValue;
+                            }
+                            break; // stop once total found
+                        }
+                    }
+
+                    // Compute change
+                    float change = payment - total;
 
 
+                    // Optional: Show in message box too
+                    if (change < 0)
+                        MessageBox.Show("Not enough payment!");
 
 
+                    // Show results in listbox
+                    listBox1.Items.Add("Payment Method: Cash ");
+                    listBox1.Items.Add("Payment: ₱" + payment);
+                    listBox1.Items.Add("Change: ₱" + change);
+                    listBox1.Items.Add("Thank you for Ordering, Come Again");
+                    bool paymentDone = true;
 
+                }
+         
+            }    
 
-
-
-            }
-            if (comboBox2.Text == "Credit Card")
+            else if (comboBox2.Text == "Credit Card")
             {
+                listBox1.Items.Add("Payment Method: Credith Card ");
+                listBox1.Items.Add("Amount Charged: ₱" + total);
+
+                listBox1.Items.Add("Payment Approved");
+                listBox1.Items.Add("Thank you for Ordering, Come Again");
 
 
             }
-           
+
+
+
+
+
+
+
+
 
         }
+          
 
        
 
@@ -137,7 +181,12 @@ namespace System
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //
+            
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
