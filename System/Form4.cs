@@ -38,27 +38,54 @@ namespace System
             // Add items only once
             if (comboBox1.Items.Count == 0)
             {
-                comboBox1.Items.Add("Cinnamon Roll + ₱55");
-                comboBox1.Items.Add("Brownies + ₱35");
-                comboBox1.Items.Add("Chocolate Chips Cookies + ₱45");
+                comboBox1.Items.Add("Cinnamon Roll  ₱55");
+                comboBox1.Items.Add("Brownies  ₱35");
+                comboBox1.Items.Add("Chocolate Chips Cookies  ₱45");
+                comboBox1.Items.Add("Waffle  ₱55");
+             
             }
 
             if (comboBox4.Items.Count == 0)
             {
-                comboBox4.Items.Add("Baked Mac + ₱55");
-                comboBox4.Items.Add("Tuna Pesto + ₱65");
-                comboBox4.Items.Add("Aglio E Olio + ₱65");
-                comboBox4.Items.Add("Fettuccine Alfredo + ₱70");
+                comboBox4.Items.Add("Baked Mac  ₱55");
+                comboBox4.Items.Add("Tuna Pesto  ₱65");
+                comboBox4.Items.Add("Aglio E Olio  ₱65");
+                comboBox4.Items.Add("Fettuccine Alfredo  ₱70");
             }
 
             if (comboBox6.Items.Count == 0)
             {
-                comboBox6.Items.Add("Fries + ₱20");
+                comboBox6.Items.Add("Fries  ₱20");
                 comboBox6.Items.Add("Takoyaki");
-                comboBox6.Items.Add("Shawarma + ₱70");
-                comboBox6.Items.Add("Cheese stick + ₱20");
-                comboBox6.Items.Add("Siomai + ₱20");
+                comboBox6.Items.Add("Shawarma  ₱70");
+                comboBox6.Items.Add("Cheese stick  ₱20");
+                comboBox6.Items.Add("Siomai");
+                comboBox6.Items.Add("Waffle");
             }
+
+            if (comboBox5.Items.Count == 0)
+            {
+                comboBox5.Items.Add("Barbeque");
+                comboBox5.Items.Add("Cheese");
+                comboBox5.Items.Add("Sour Cream");
+            }
+            if (comboBox5.Items.Count == 0)
+            {
+                comboBox5.Items.Add("Octo  ₱85 for (4pcs)");
+                comboBox5.Items.Add("Bacon  ₱75 for (4pcs)");
+                comboBox5.Items.Add("Cheese  ₱65 for (4pcs)");
+            }
+            if (comboBox5.Items.Count == 0)
+            {
+                comboBox5.Items.Add("Pork Siomai  ₱20");
+                comboBox5.Items.Add("Japanese Siomai  ₱20");
+            }
+            else 
+            {
+            comboBox5.Items.Add("Chocolate ₱30");
+            comboBox5.Items.Add("Strawberry ₱30");
+            }
+
 
 
         }
@@ -66,22 +93,11 @@ namespace System
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string[] a = { "Cinnamon Roll", "Brownies", "Chocolate Chips Cookies", "Chocolate Muffin", "Waffle" };
-            for (int i = 0; i < a.Length; i++)
-            {
-                comboBox1.Items.Add(a[i]);
-            }
+           
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox4.Items.Count == 0)
-            {
-                comboBox4.Items.Add("Baked Mac + ₱55 ");
-                comboBox4.Items.Add("Tuna Pesto + ₱65");
-                comboBox4.Items.Add("Aglio E Olio + ₱65");
-                comboBox4.Items.Add("Fettuccine Alfredo + ₱70");
-            }
 
 
         }
@@ -89,6 +105,7 @@ namespace System
 
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
+          
             comboBox5.Items.Clear();
             if (comboBox6.Text.Equals("Fries"))
             {
@@ -102,13 +119,13 @@ namespace System
             if (comboBox6.Text.Equals("Takoyaki"))
             {
 
-                comboBox5.Items.Add("Octo + ₱85 for (4pcs)");
-                comboBox5.Items.Add("Octo + ₱75 for (4pcs)");
-                comboBox5.Items.Add("Cheese + ₱65 for (4pcs)");
+                comboBox5.Items.Add("Octo  ₱85 for (4pcs)");
+                comboBox5.Items.Add("Bacon  ₱75 for (4pcs)");
+                comboBox5.Items.Add("Cheese  ₱65 for (4pcs)");
 
             }
 
-            if (comboBox6.Text.Equals("Cheese stick + ₱20"))
+            if (comboBox6.Text.Equals("Cheese stick  ₱20"))
             {
                 string[] flavor1 = { "Barbeque", "Cheese", "Sour Cream" };
                 for (int i = 0; i < flavor1.Length; i++)
@@ -117,15 +134,23 @@ namespace System
                 }
             }
 
-            if (comboBox6.Text.Equals("Shawarma + ₱70"))
+            if (comboBox6.Text.Equals("Shawarma  ₱70"))
             {
                 string[] flavor1 = { "Original sauce", "Hummus Sauce", "Harissa Sauce" };
                 for (int i = 0; i < flavor1.Length; i++)
                 {
                     comboBox5.Items.Add(flavor1[i]);
                 }
-
-
+            }
+            if (comboBox6.Text.Equals("Siomai"))
+            {
+                comboBox5.Items.Add("Pork Siomai  ₱20");
+                comboBox5.Items.Add("Japanese Siomai  ₱20");
+            }
+            if (comboBox6.Text.Equals("Waffle"))
+            {
+              comboBox5.Items.Add("Chocolate ₱30");
+                comboBox5.Items.Add("Strawberry ₱30");
 
 
             }

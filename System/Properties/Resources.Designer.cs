@@ -103,6 +103,16 @@ namespace System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _568189732_25377194548551835_8540481663362948875_n {
+            get {
+                object obj = ResourceManager.GetObject("568189732_25377194548551835_8540481663362948875_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _586321b7_c5a4_400c_aeec_33be4815b3e1 {
             get {
                 object obj = ResourceManager.GetObject("586321b7-c5a4-400c-aeec-33be4815b3e1", resourceCulture);
@@ -156,6 +166,16 @@ namespace System.Properties {
         internal static System.Drawing.Bitmap download__3_ {
             get {
                 object obj = ResourceManager.GetObject("download (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap history {
+            get {
+                object obj = ResourceManager.GetObject("history", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

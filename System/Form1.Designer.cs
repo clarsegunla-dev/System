@@ -97,7 +97,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Brown;
+            this.button1.BackColor = System.Drawing.Color.SaddleBrown;
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(286, 555);
             this.button1.Name = "button1";

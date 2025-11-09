@@ -12,9 +12,14 @@ namespace System
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        public Form2(ListBox.ObjectCollection items)
         {
             InitializeComponent();
+        }
+
+        public Form2()
+        {
+
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -29,7 +34,7 @@ namespace System
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void button3_Click(object sender, EventArgs e)

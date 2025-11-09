@@ -18,6 +18,8 @@ namespace System
         public Form5(ListBox.ObjectCollection items)
         {
             InitializeComponent();
+         
+
 
             float total = listBox1.Items.Count;
             Form5 lahat = new Form5(total);
@@ -34,7 +36,8 @@ namespace System
             comboBox1.Items.Add("Take Out");
 
             comboBox2.Items.Add("Cash");
-            comboBox2.Items.Add(" Credit Card");
+            comboBox2.Items.Add("Credit Card");
+            comboBox2.Items.Add("Debit Card");
 
         }
 
@@ -55,7 +58,7 @@ namespace System
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
+           
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -64,16 +67,29 @@ namespace System
             if (comboBox1.Text=="Dine In")
             {
                 comboBox2.Items.Add("Cash");
-                comboBox2.Items.Add(" Credit Card");
-
-              
+                comboBox2.Items.Add("Credit Card"); 
             }
-            
+            else if (comboBox1.Text=="Take Out")
+            {
+                comboBox2.Items.Add("Cash");
+                comboBox2.Items.Add("Credit Card");
+                comboBox2.Items.Add("Debit Card");
+            }
+
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (comboBox2.Text == "Cash")
+            {
+                textBox1.Enabled = false;
+                textBox2.Enabled = true;
+            }
+            else if (comboBox2.Text =="Credit Card || Debit Card")
+            {
+                textBox1.Enabled = true;
+                textBox2.Enabled = true;
+            }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -88,7 +104,7 @@ namespace System
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -98,10 +114,11 @@ namespace System
 
             if (comboBox2.Text == "Cash")
             {
+
                 //  Get payment from textbox
-                if (float.TryParse(textBox3.Text, out float payment))
+                if (float.TryParse(textBox2.Text, out float payment))
                 {
-                    
+                    textBox1.Enabled = true;
 
                     // Find the total line inside the list box
                     foreach (string item in listBox1.Items)
@@ -127,42 +144,53 @@ namespace System
 
 
                     // Show results in listbox
+                    listBox1.Items.Add(comboBox2.Text);
                     listBox1.Items.Add("Payment Method: Cash ");
                     listBox1.Items.Add("Payment: ₱" + payment);
                     listBox1.Items.Add("Change: ₱" + change);
                     listBox1.Items.Add("Thank you for Ordering, Come Again");
-                    bool paymentDone = true;
+
 
                 }
-         
-            }    
+
+            }
+
+            if (comboBox2.Text == "Credit Card")
+            {
+
+
+                listBox1.Items.Add(comboBox2.Text);
+                listBox1.Items.Add("Payment Method: Credith Card ");
+                listBox1.Items.Add("Amount Charged: ₱" + total);
+                listBox1.Items.Add("Payment Approved");
+                listBox1.Items.Add("Thank you for Ordering, Come Again");
+
+
+            }
 
             else if (comboBox2.Text == "Credit Card")
             {
+
+
+                listBox1.Items.Add(comboBox2.Text);
                 listBox1.Items.Add("Payment Method: Credith Card ");
                 listBox1.Items.Add("Amount Charged: ₱" + total);
-
                 listBox1.Items.Add("Payment Approved");
                 listBox1.Items.Add("Thank you for Ordering, Come Again");
-                //cla
+
 
             }
 
 
-
-
-
-
-
+            foreach (string item in listBox1.Items)
+            {
+                listBox1.Items.Add(item); // Add items to Form4 ListBox
+                Form6 history = new Form6(listBox1.Items);
+               
+            }
 
 
         }
-          
-
-       
-
-       
-
         private void button6_Click(object sender, EventArgs e)
         {
 
@@ -170,8 +198,7 @@ namespace System
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
-            form.Show();
+         this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -181,10 +208,26 @@ namespace System
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+
+           
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

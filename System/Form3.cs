@@ -16,7 +16,7 @@ namespace System
         int pearl, nata, popping, noneads;
 
         int dd = 0;
-        int total;
+      
 
 
         public Form3()
@@ -257,11 +257,7 @@ namespace System
             }
         }
             
-            /*int input = Convert.ToInt32(textBox1.Text);
            
-            comboBox4.Items.Add(input + "%");
-            comboBox4.SelectedItem = input;
-            textBox1.Clear();*/
         
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -413,6 +409,11 @@ namespace System
             textBox2.Enabled = false;
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
             // makapag delete
@@ -439,7 +440,6 @@ namespace System
 
             // Open Form4 and papasa the value
             Form4 pastry = new Form4(listBox1.Items, totalForm3, hasTotalForm3);
-            pastry.StartPosition = FormStartPosition.CenterScreen;
             pastry.Show();
 
 

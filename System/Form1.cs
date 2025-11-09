@@ -14,28 +14,11 @@ namespace System
     public partial class Form1 : Form
     {
         int ulit = 3;
-      
+        
         public Form1()
         {
             InitializeComponent();
-           
-
-            textBox3.PasswordChar = '*';
-
           
-
-
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -52,14 +35,9 @@ namespace System
         {
 
         }
-
-       
-
-       
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -91,36 +69,18 @@ namespace System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string fname = textBox1.Text;
-            string lname = textBox2.Text;
-            string idnum = textBox4.Text;
+           string fname = textBox1.Text;
+           string lname = textBox2.Text;
+          int idnum = Convert.ToInt32(textBox4.Text);
 
             string Comfirmpass = textBox3.Text;
             Comfirmpass = "12345678";
 
-            if (string.IsNullOrEmpty(fname) || string.IsNullOrEmpty(lname) || string.IsNullOrEmpty(idnum))
+            if (string.IsNullOrEmpty(fname) || string.IsNullOrEmpty(lname) || string.IsNullOrEmpty(idnum.ToString()))
             {
                 MessageBox.Show("There is missing information");
                 return;
             }
-
-            if (idnum.Length != 4 || !idnum.All(char.IsDigit))
-            {
-                MessageBox.Show("ID number must be exactly 4 digits.");
-                textBox4.Clear();
-                return;
-            }
-            if (Comfirmpass.Length != 8 || !Comfirmpass.All(char.IsDigit))
-            {
-                MessageBox.Show("Password number must be exactly 8 digits.");
-               
-                return;
-
-
-
-            }
-
-
             if (textBox3.Text == Comfirmpass)
             {
                 Form2 Home = new Form2();
@@ -145,7 +105,6 @@ namespace System
 
 
         }
-
         private void label3_Click(object sender, EventArgs e)
         {
 
